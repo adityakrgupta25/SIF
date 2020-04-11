@@ -11,12 +11,17 @@ def getWordmap(textfile):
     f = open(textfile,'r')
     lines = f.readlines()
     for (n,i) in enumerate(lines):
-        i=i.split(" ")
+        i=i.split()
         j = 1
         v = []
         while j < len(i):
-            v.append(float(i[j]))
-            j += 1
+            try:
+                v.append(float(i[j]))
+                j += 1
+            except Exception as e:
+                print(i)
+                raise e
+
         words[i[0]]=n
         We.append(v)
     return (words, np.array(We))
