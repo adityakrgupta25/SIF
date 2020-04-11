@@ -14,13 +14,13 @@ def getWordmap(textfile):
         i=i.split()
         j = 1
         v = []
-        while j < len(i):
-            try:
+        try:
+            while j < len(i):
                 v.append(float(i[j]))
                 j += 1
-            except Exception as e:
-                print(i)
-                continue
+        except Exception as e:
+            print(i)
+            continue
 
         words[i[0]]=n
         We.append(v)
