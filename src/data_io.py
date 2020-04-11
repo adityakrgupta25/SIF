@@ -20,7 +20,7 @@ def getWordmap(textfile):
                 j += 1
             except Exception as e:
                 print(i)
-                raise e
+                continue
 
         words[i[0]]=n
         We.append(v)
